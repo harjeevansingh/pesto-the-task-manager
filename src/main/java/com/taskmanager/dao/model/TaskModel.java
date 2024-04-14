@@ -20,4 +20,8 @@ public class TaskModel {
     public List<Task> getAllTasks() {
         return taskDAO.findAllByOrderByIdDesc();
     }
+
+    public Task getTask(Long id) {
+        return taskDAO.findById(id).orElse(null);
+    }
 }

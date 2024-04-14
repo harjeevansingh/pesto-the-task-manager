@@ -1,7 +1,10 @@
 package com.taskmanager.services;
 
+import com.taskmanager.constants.enums.exceptionCodes.RootExceptionCodes;
 import com.taskmanager.dao.model.TaskModel;
 import com.taskmanager.dto.ResponseDTO.ResponseDTO;
+import com.taskmanager.entities.Task;
+import com.taskmanager.exceptions.RootException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,7 +28,11 @@ public class TaskService {
 
     public ResponseDTO<?> getTask(Long id) {
         log.info("Get Task details: " + id);
-        return new ResponseDTO<>("Task details");
+        Task task = taskModel.getTask(id);
+        if(task == null) {
+            throw new RootException(RootExceptionCodes.TASK_NOT_FOUND);
+        }
+        return new ResponseDTO<>(taskModel.getTask(id));
     }
 
     public ResponseDTO<?> getAllTasks() {
