@@ -1,9 +1,11 @@
 package com.taskmanager.controllers.v1;
 
+import com.taskmanager.dto.ResponseDTO.request.CreateTaskRequestDTO;
 import com.taskmanager.services.TaskService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -19,9 +21,9 @@ public class TaskController {
     private TaskService taskService;
 
     @PostMapping("/")
-    public ResponseEntity<?> addTask() {
+    public ResponseEntity<?> addTask(@Validated @RequestBody CreateTaskRequestDTO createTaskRequestDTO) {
         log.info("Request received to add Task");
-        return ResponseEntity.ok(taskService.addTask());
+        return ResponseEntity.ok(taskService.addTask(createTaskRequestDTO));
     }
 
     @GetMapping("/{id}")

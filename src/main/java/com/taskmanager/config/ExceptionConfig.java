@@ -38,6 +38,7 @@ public class ExceptionConfig {
         response.setMessage(ex.getMessage());
         response.setSuccess(false);
         response.setStatusCode(String.valueOf(ex.getStatusCode().value()));
+        response.setDebugCode(ex.getCode());
         log.warn("Unhandled root exception: " + ex.getMessage(), ex);
         return ResponseEntity.status(ex.getStatusCode()).body(response);
     }

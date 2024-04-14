@@ -6,6 +6,7 @@ package com.taskmanager.constants.enums.exceptionCodes;
 
 public enum RootExceptionCodes implements ExceptionCodes {
     TASK_NOT_FOUND("BE_501", "Task not found!"),
+    DUPLICATE_TASK_TITLE("BE_502", "Duplicate task title!"),
     ;
 
     private final String code;

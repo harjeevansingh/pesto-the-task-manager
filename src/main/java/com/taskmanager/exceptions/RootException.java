@@ -35,6 +35,7 @@ public class RootException extends RuntimeException {
         this.message = exceptionCode.getMessage();
         errors.put("message", message);
         errors.put("error_code", code);
+        System.out.println("RootException:" + exceptionCode);
     }
 
     public String getCode() {

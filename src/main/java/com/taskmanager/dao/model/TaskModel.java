@@ -24,4 +24,12 @@ public class TaskModel {
     public Task getTask(Long id) {
         return taskDAO.findById(id).orElse(null);
     }
+
+    public Task saveTask(Task task) {
+        return taskDAO.save(task);
+    }
+
+    public Task getTaskByTitle(String title) {
+        return taskDAO.findByTitle(title);
+    }
 }
