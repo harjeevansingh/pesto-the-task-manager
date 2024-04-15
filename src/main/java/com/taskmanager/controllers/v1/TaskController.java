@@ -1,6 +1,6 @@
 package com.taskmanager.controllers.v1;
 
-import com.taskmanager.dto.ResponseDTO.request.CreateTaskRequestDTO;
+import com.taskmanager.dto.request.CreateTaskRequestDTO;
 import com.taskmanager.services.TaskService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

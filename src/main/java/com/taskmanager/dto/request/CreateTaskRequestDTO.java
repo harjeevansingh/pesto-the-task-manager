@@ -1,4 +1,4 @@
-package com.taskmanager.dto.ResponseDTO.request;
+package com.taskmanager.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;

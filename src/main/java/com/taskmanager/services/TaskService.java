@@ -4,7 +4,7 @@ import com.taskmanager.constants.enums.TaskStatus;
 import com.taskmanager.constants.enums.exceptionCodes.RootExceptionCodes;
 import com.taskmanager.dao.model.TaskModel;
 import com.taskmanager.dto.ResponseDTO.ResponseDTO;
-import com.taskmanager.dto.ResponseDTO.request.CreateTaskRequestDTO;
+import com.taskmanager.dto.request.CreateTaskRequestDTO;
 import com.taskmanager.entities.Task;
 import com.taskmanager.exceptions.RootException;
 import lombok.extern.slf4j.Slf4j;
