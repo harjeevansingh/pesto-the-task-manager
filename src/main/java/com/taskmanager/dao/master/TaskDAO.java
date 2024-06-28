@@ -11,4 +11,6 @@ import java.util.List;
 
 public interface TaskDAO extends JpaRepository<Task, Long>{
     List<Task> findAllByOrderByIdDesc();
+
+    Task findByTitle(String title);
 }
